@@ -1,15 +1,15 @@
-# Implementation of stack using arrays
-class Stack
+# Implementation of a queue with an array
+class Queue
   def initialize
     @array = []
   end
 
-  def add(el)
+  def enqueue(el)
     @array << el
   end
 
-  def remove
-    @array.pop
+  def dequeue
+    @array.unshift
   end
 
   def show
