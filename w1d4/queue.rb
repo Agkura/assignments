@@ -9,7 +9,7 @@ class Queue
   end
 
   def dequeue
-    @array.unshift
+    @array.shift
   end
 
   def show
