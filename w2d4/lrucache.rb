@@ -1,3 +1,4 @@
+# basic LRU Cache
 class LRUCache
   attr_reader :cache
   def initialize(size = 3)
@@ -6,24 +7,18 @@ class LRUCache
   end
 
   def self.from_file(file)
-    input = File.readlines(file)
-
-    input.each_index { |idx| input[idx] = input[idx].split }
+    input = File.readlines(file).map(&:split)
 
     input.each_with_index do |line, index|
       print_cache = LRUCache.new(line.first.to_i)
       puts "Simulation #{index + 1}" unless line.length < 2
 
       line.last.chars.each do |char|
-        print_cache.add(char) unless char == "!"
-        if char == "!"
-          print_cache.show
-          print "\n"
-        end
+        print_cache.add(char) unless char == '!'
+        print_cache.show if char == '!'
         print "\n" if char == "\n"
       end
     end
-
   end
 
   def count
@@ -33,7 +28,7 @@ class LRUCache
   def add(el)
     index = cache.index(el)
     if index
-      @cache = @cache + [@cache.slice!(index)]
+      @cache += [@cache.slice!(index)]
     else
       @cache.push(el)
     end
@@ -42,16 +37,13 @@ class LRUCache
   end
 
   def show
-    print cache.join
+    puts cache.join
     nil
   end
 
   private
-  # helper methods go here!
+
   attr_accessor :cache_max
-
 end
 
-if __FILE__ == $PROGRAM_NAME
-  a = LRUCache.from_file('example.txt')
-end
+a = LRUCache.from_file('example.txt') if __FILE__ == $PROGRAM_NAME
