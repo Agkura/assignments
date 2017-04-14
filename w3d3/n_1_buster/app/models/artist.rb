@@ -18,5 +18,9 @@ class Artist < ActiveRecord::Base
 
   def better_tracks_query
     # TODO: your code here
+
   end
 end
+
+
+#roguelighter
