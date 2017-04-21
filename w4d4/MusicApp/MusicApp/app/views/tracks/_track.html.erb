@@ -1,0 +1,10 @@
+Song Title:  <%= track.song %>
+<br>
+Album: <a href="<%= album_url(track.album) %>"><%= track.album.title %></a>
+<br>
+Band: <a href="<%= band_url(track.album.band) %>"><%= track.album.band.name %></a>
+ <p>Lyrics: <br> <%= track.lyrics %> </p>
+Bonus?: <%= track.regular ? "no" : "yes"  %>
+
+<%= button_to "Edit", edit_track_url(track), method: :get %>
+<%= button_to "Delete", track_url(track), method: :delete %>

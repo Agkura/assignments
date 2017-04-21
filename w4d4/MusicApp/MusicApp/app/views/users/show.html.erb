@@ -1,0 +1,8 @@
+<% if @user %>
+  <%= @user.email %>
+<% else %>
+  <p> There is no user here! </p>
+<% end %>
+<br>
+<br>
+<%= link_to "Go to Bands", bands_url %>

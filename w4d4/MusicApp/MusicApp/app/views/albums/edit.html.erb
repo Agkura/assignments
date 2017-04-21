@@ -1,0 +1,24 @@
+<h1>Edit Album</h1>
+
+<form action= "<%= album_url %>" method="POST">
+  <input type="hidden" name="_method" value="patch">
+  <%= auth_token %>
+  <label for="name">Title Name</label>
+  <input type="text" name="album[title]" value="<%= @album.title %>">
+  <br>
+  <label for="band_list">Choose a band</label>
+  <select id="band_list" name="album[band_id]">
+    <% Band.all.each do |band| %>
+      <option <%= "selected" if @album.band == band %> value="<%= band.id %>"> <%= band.name %> </option>
+    <% end %>
+  </select>
+  <br>
+  <label>Record Type: <br>
+  <label for="true">Live</label>
+    <input <%= "checked" if @album.live == true %> id="true" type="radio" value="true" name="album[live]">
+  <label for="false">Studio</label>
+    <input <%= "checked" if @album.live == false %> id="false" type="radio" value="false" name="album[live]">
+  </label>
+  <br>
+  <input type="submit">
+</form>

@@ -1,0 +1,10 @@
+Album Title:  <%= album.title %>
+<br>
+Band: <a href="<%= band_url(album.band) %>"><%= album.band.name %></a>
+
+<%= button_to "Edit", edit_album_url(album), method: :get %>
+<%= button_to "Delete", album_url(album), method: :delete %>
+<% album.tracks.each do |track| %>
+  <%= link_to track.song, track_url(track) %>
+  <br>
+<% end %>
