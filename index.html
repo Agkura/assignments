@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>HTML Introduction Exercise</title>
     <meta name="Gordon Ramsay Recipe" content="Gordon Ramsay recipe simplified. Sweet and smooth cheesecake that one can not consider too much in healthy lifestyle."/>
-    <link rel="stylesheet" href="./css_reset.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="./css_reset.css" type="text/css" /> -->
     <script type="text/javascript" src="external_javascript_example.js"></script>
+    <link rel="stylesheet" href="./css_test.css" type="text/css" />
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -18,21 +19,21 @@
   </head>
   <body>
 
-    <header>
+    <header class="cf">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Appacademylogo.png/175px-Appacademylogo.png" />
-      <nav>
-        <h4>Navigation</h4>
-        <ul>
+      <nav >
+        <h4 class="nav-header">Navigation</h4>
+        <ul >
           <li><a href="#ingredients">To Ingredients</a></li>
           <li><a href="#directions">To Directions</a></li>
         </ul>
       </nav>
     </header>
 
-    <aside>
+    <aside class="col col-1-3">
 
       <h4 id="ingredients">Ingredients</h4>
-      <ul>
+      <ul class="ingredients-list">
         <li>300g Philadelphia Cheese</li>
         <li>250g Marscapone</li>
         <li>300ml Double Cream</li>
@@ -46,7 +47,7 @@
 
     </aside>
 
-    <section>
+    <section class="main col col-1-1">
 
       <h1>White Chocolate Cheesecake</h1>
 
@@ -77,28 +78,25 @@
     <section id="reviews">
       <form action="/reviews" method="post" id="review-form">
         <label for="title">Reviewer Name:</label>
-        <br />
+
         <input id="title" type="text" name="name" />
 
-        <br />
 
-        <p>Please rate the recipe</p>
         <label for="rate_5">5</label>
-        <input type="radio" name="rating" id="rate_5" value=5 />
+        <input type="radio" name="rating" id="rate_5" value=5 class="rating" />
         <label for="rate_4">4</label>
-        <input type="radio" name="rating" id="rate_4" value=4 />
+        <input type="radio" name="rating" id="rate_4" value=4 class="rating"/>
         <label for="rate_3">3</label>
-        <input type="radio" name="rating" id="rate_3" value=3 />
+        <input type="radio" name="rating" id="rate_3" value=3 class="rating"/>
         <label for="rate_2">2</label>
-        <input type="radio" name="rating" id="rate_2" value=2 />
+        <input type="radio" name="rating" id="rate_2" value=2 class="rating"/>
         <label for="rate_1">1</label>
-        <input checked type="radio" name="rating" id="rate_1" value=1 />
+        <input checked type="radio" name="rating" id="rate_1" value=1 class="rating"/>
 
-        <br />
-        <br />
 
-        <label for="experise">Rate your cooking expertise</label>
-        <br />
+
+        <label for="experise"></label>
+
         <select name="cooking_expertise" id="expertise">
           <option disabled selected>
             -- Select Cooking Expertise --
@@ -109,16 +107,12 @@
           <option value="professional">Professional Chef</option>
         </select>
 
-        <br />
-        <br />
 
-        <label>
-          Review
-          <br />
-          <textarea name="review">
-          </textarea>
-        </label>
-        <br />
+
+        <label id="review-label">Review</label>
+        <textarea name="review"></textarea>
+
+
         <input type="submit" value="Submit Review">
       </form>
     </section>
