@@ -11,6 +11,39 @@ p, section, ol, footer, form, figure {
   text-decoration: inherit;
 }
 
+@media (max-width: 500px){
+  nav ul {
+    display: none;
+  }
+
+  .hamburger-dropdown {
+    display: block;
+    position: relative;
+  }
+  .hamburger-dropdown > li {
+    background-image: url(hamburger.png);
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-size: 50px;
+  }
+
+  .hamburger-dropdown > li > ul {
+    position: absolute;
+  }
+
+  .hamburger-dropdown ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.hamburger-dropdown {
+  display: none;
+}
+
+
 footer {
   clear: both;
 }
@@ -43,6 +76,7 @@ h1 {
 figure {
   display: inline-block;
   width: 100%;
+  height: auto;
 }
 
 input:last-child:hover {
@@ -115,7 +149,7 @@ li > a{
 
 
 nav {
-  float: right;
+  text-align: right;
 }
 
 nav > ul > li {
